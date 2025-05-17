@@ -8,9 +8,10 @@ use Doctrine\Persistence\ObjectManager;
 use Odiseo\SyliusRbacPlugin\Factory\AdministrationRoleFactoryInterface;
 use Odiseo\SyliusRbacPlugin\Message\CreateAdministrationRole;
 use Odiseo\SyliusRbacPlugin\Validator\AdministrationRoleValidatorInterface;
-use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
-final class CreateAdministrationRoleHandler implements MessageHandlerInterface
+#[AsMessageHandler]
+final class CreateAdministrationRoleHandler
 {
     /** @var ObjectManager */
     private $administrationRoleManager;
